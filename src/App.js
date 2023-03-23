@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 
 import Question from './Question.js';
 
@@ -43,8 +43,8 @@ function App() {
       case 'init':
         return (
           <>
-            <div className="mb-5">Оветьте на вопросы, чтобы определить какие языки программирования вам подходят</div>
-            <Button onClick={() => setProcessState('started')}>Начать</Button>
+            <div className="mb-4">Оветьте на вопросы, чтобы определить какие языки программирования вам подходят</div>
+            <div><Button onClick={() => setProcessState('started')}>Начать</Button></div>
           </>
         );
       case 'started':
@@ -52,13 +52,31 @@ function App() {
           <Question question={questions[currentQuestion]} setAnswer={setAnswer} />
         );
       case 'finish':
-        return (<FinishResult result={finishResult} />);
+        return (
+          <>
+            <FinishResult result={finishResult} />
+            <Button className="mt-4" onClick={() => {
+              setCurrentResults({});
+              setCurrentQuestion(0);
+              setFinishResult({});
+              setProcessState('started');
+            }}>Заново</Button>
+          </>
+        );
     }
   };
 
   return (
-    <div className="App">
-      {render()}
+    <div className="container-fluid h-100">
+      <div className="row justify-content-center align-content-center h-100">
+        <div className="col-12 col-md-8 col-xxl-6">
+          <div className="card shadow-sm">
+            <div className="card-body flex-column flex-md-row justify-content-around align-items-center p-5">
+              {render()}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

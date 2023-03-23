@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Card } from 'react-bootstrap';
 
 function Question({ question, setAnswer }) {
   const [userAnswer, setUserAnswer] = useState(null);
@@ -20,7 +20,7 @@ function Question({ question, setAnswer }) {
           />
         </div>
       ))}
-      <Button onClick={() => {
+      <Button disabled={userAnswer === null} onClick={() => {
         setAnswer(userAnswer);
         setUserAnswer(null);
       }}>Далее</Button>
