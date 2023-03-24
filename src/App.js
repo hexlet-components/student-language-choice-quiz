@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Card, Button } from 'react-bootstrap';
 
+import _ from 'lodash';
+
 import Question from './Question.js';
 
 import questions from './data/questions.js';
@@ -10,9 +12,12 @@ import descriptions from './data/languageDescription.js';
 function FinishResult({result}) {
   const languages = result.map((name) => descriptions[name]);
 
+  const cloned = _.cloneDeep(languages);
+  const last = cloned.pop();
+
   return (
     <>
-      <div>{`Ваш выбор — ${languages.map(({name}) => name).join(', ')}`}</div>
+      <div>{`Ваш выбор — ${cloned.map(({name}) => name).join(', ')} или ${last.name}`}</div>
       {languages.map(({description}) => <div className="mt-3">{description}</div>)}
     </>
   );
