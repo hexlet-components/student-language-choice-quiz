@@ -15,9 +15,11 @@ function FinishResult({result}) {
   const cloned = _.cloneDeep(languages);
   const last = cloned.pop();
 
+  const result = cloned.length > 0 ? `${cloned.map(({name}) => name).join(', ')} или ${last.name}` : last.name;
+
   return (
     <>
-      <div>{`Ваш выбор — ${cloned.map(({name}) => name).join(', ')} или ${last.name}`}</div>
+      <div>{`Ваш выбор — ${result}`}</div>
       {languages.map(({description}) => <div className="mt-3">{description}</div>)}
     </>
   );
