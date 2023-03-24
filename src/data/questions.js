@@ -117,8 +117,8 @@ export default JSON.parse(`
               "js":"1",
               "php":"3"
            }
-     },
-     ]
+      }
+    ]
    },
    {
     "question":"Что вам ближе:",

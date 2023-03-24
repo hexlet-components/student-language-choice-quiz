@@ -12,8 +12,8 @@ function FinishResult({result}) {
 
   return (
     <>
-      <div>{`Вам подойдут: ${languages.map(({name}) => name).join(', ')}`}</div>
-      {languages.map(({description}) => <div>{description}</div>)}
+      <div>{`Ваш выбор — ${languages.map(({name}) => name).join(', ')}`}</div>
+      {languages.map(({description}) => <div className="mt-3">{description}</div>)}
     </>
   );
 };
