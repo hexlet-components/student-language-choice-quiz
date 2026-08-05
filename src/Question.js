@@ -7,7 +7,7 @@ function Question({ question, setAnswer }) {
     <Form>
       <Form.Label className="mb-4">{question.question}</Form.Label>
       {question.answers.map((answer, index) => (
-        <div key="default-radio" className="mb-3">
+        <div key={index} className="mb-3">
           <Form.Check 
             type="radio"
             id={answer.answer}
