@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import _ from "lodash";
 
 export const getResult = (result) => {
   const parsedResults = Object.entries(result);
@@ -9,15 +9,18 @@ export const getResult = (result) => {
 };
 
 export default (question, answer, results) => {
-  const result = question.answers[answer]; 
-  const res = Object.entries(result.results).reduce((acc, [language, count]) => {
-    const value = parseFloat(count, 10);
-    if (!acc[language]) {
-      acc[language] = 0;
-    }
-    acc[language] += value;
-    return acc;
-  }, { ...results});
+  const result = question.answers[answer];
+  const res = Object.entries(result.results).reduce(
+    (acc, [language, count]) => {
+      const value = parseFloat(count, 10);
+      if (!acc[language]) {
+        acc[language] = 0;
+      }
+      acc[language] += value;
+      return acc;
+    },
+    { ...results },
+  );
 
   return res;
 };

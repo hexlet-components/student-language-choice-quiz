@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Каталог сборки. У Vite это dist, старый build от CRA больше не создаётся.
+dist
+build
