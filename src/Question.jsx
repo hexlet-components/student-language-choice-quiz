@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Form, Button, Card } from 'react-bootstrap';
+import { useState } from "react";
+import { Form, Button } from "react-bootstrap";
 
 function Question({ question, setAnswer }) {
   const [userAnswer, setUserAnswer] = useState(null);
@@ -8,7 +8,7 @@ function Question({ question, setAnswer }) {
       <Form.Label className="mb-4">{question.question}</Form.Label>
       {question.answers.map((answer, index) => (
         <div key="default-radio" className="mb-3">
-          <Form.Check 
+          <Form.Check
             type="radio"
             id={answer.answer}
             label={answer.answer}
@@ -20,10 +20,15 @@ function Question({ question, setAnswer }) {
           />
         </div>
       ))}
-      <Button disabled={userAnswer === null} onClick={() => {
-        setAnswer(userAnswer);
-        setUserAnswer(null);
-      }}>Далее</Button>
+      <Button
+        disabled={userAnswer === null}
+        onClick={() => {
+          setAnswer(userAnswer);
+          setUserAnswer(null);
+        }}
+      >
+        Далее
+      </Button>
     </Form>
   );
 }
