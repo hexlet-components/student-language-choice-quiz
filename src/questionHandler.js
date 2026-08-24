@@ -1,11 +1,8 @@
-import _ from "lodash";
-
 export const getResult = (result) => {
   const parsedResults = Object.entries(result);
-  const max = _.maxBy(parsedResults, ([, value]) => value);
-  const res = parsedResults.filter((language) => language[1] >= max[1]).map(([name]) => name);
+  const max = Math.max(...parsedResults.map(([, value]) => value));
 
-  return res;
+  return parsedResults.filter(([, value]) => value >= max).map(([name]) => name);
 };
 
 export default (question, answer, results) => {
