@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@mantine/core": "^9.5.1",
-    "@mantine/hooks": "^9.5.1",
+    "@mantine/core": "^9.5.2",
+    "@mantine/hooks": "^9.5.2",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
@@ -30,17 +30,17 @@
       "last 1 safari version"
     ]
   },
-  "packageManager": "pnpm@11.20.0",
+  "packageManager": "pnpm@11.24.0",
   "devDependencies": {
     "@testing-library/jest-dom": "^7.0.1",
-    "@testing-library/react": "^16.3.2",
-    "@testing-library/user-event": "^14.6.3",
-    "@vitejs/plugin-react": "^6.0.5",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.6",
+    "@vitejs/plugin-react": "^6.1.1",
     "jsdom": "^30.0.1",
-    "oxfmt": "^0.63.0",
-    "oxlint": "^1.78.0",
-    "vite": "^8.2.1",
-    "vitest": "^4.1.10"
+    "oxfmt": "^0.65.0",
+    "oxlint": "^1.80.0",
+    "vite": "^8.2.2",
+    "vitest": "^4.1.11"
   },
   "type": "module"
 }
